@@ -1,1 +1,27 @@
 /* add css for index.html */
+.hidden {
+    display: none;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+}
+
+section div {
+    display: flex;
+    flex-direction: column;
+}
+
+div img {
+    width: 90px;
+    margin-left: 20px;;
+}
+
+span {
+    text-align: center;
+}
+
+#begin {
+    margin: 10px;
+}
