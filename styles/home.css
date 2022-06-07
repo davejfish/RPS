@@ -3,6 +3,10 @@
     display: none;
 }
 
+.box {
+    border: solid 3px black;
+}
+
 section {
     display: flex;
     flex-direction: row;
@@ -13,9 +17,17 @@ section div {
     flex-direction: column;
 }
 
-div img {
+img {
+    align-self: center;
+}
+
+#avatar-display {
     width: 90px;
     margin-left: 20px;;
+}
+
+#player-avatar {
+    width: 80px;
 }
 
 span {
@@ -24,4 +36,33 @@ span {
 
 #begin {
     margin: 10px;
+}
+
+.throw-select {
+    display: grid;
+    grid-template-columns: 40% 20% 40%;
+    height: 150px;
+    width: 400px;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.rps-button {
+    width: 50px;
+}
+
+.rps-image {
+    width: 25px;
+}
+
+.cpu-image {
+    width: 120px;
+}
+
+.centered {
+    justify-content: center;
+    align-items: center;
 }
