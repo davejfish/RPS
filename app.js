@@ -12,21 +12,14 @@ let choosing = 1;
 let jankenArr = ['rock', 'paper', 'scissors'];
 
 // components
-    // component
-    // define and grab DOM elements
-    // display functions
-    // optional: subscribe to events
-        // event handlers - what needs to happen?
-        // logic and calculations
-        // state update
-        // re-display components (which ones?)
-    // optional: handle functions for shared event handler logic
 
 // find winner, update states and scoreboard, update win/loss/draw picture, update choosing
 function handleThrow(player) {
-    let result = score(player, getRandomItem(jankenArr));
+    let cpuThrow = getRandomItem(jankenArr);
+    let result = score(player, cpuThrow);
 
     updateResults(result);
+    updateResultPictures(player, cpuThrow);
 
     choosing = 0;
     updateClasses();
@@ -86,6 +79,14 @@ function updateResults(result) {
     }
 }
 
+// update pictures for player throw and cpu throw in results
+let playerThrowDisplay = document.getElementById('player-thrown');
+let cpuThrowDisplay = document.getElementById('cpu-throw');
+function updateResultPictures(playerThrow, cpuThrow) {
+    playerThrowDisplay.src = 'assets/' + playerThrow + '.png';
+    cpuThrowDisplay.src = 'assets/' + cpuThrow + '.png';
+}
+
 // update the state values based on result
 function updateStates(result) {
     if (result === 1) {
@@ -142,5 +143,4 @@ nameInput.addEventListener('change', () => {
 });
 
 // page load actions
-
 
