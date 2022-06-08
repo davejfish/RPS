@@ -1,8 +1,4 @@
 /* add css for index.html */
-.hidden {
-    display: none;
-}
-
 .box {
     border: solid 3px black;
 }
@@ -112,4 +108,8 @@ button {
 
 .result-throws {
     width: 60px;
+}
+
+.hidden {
+    display: none;
 }

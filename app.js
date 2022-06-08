@@ -21,10 +21,98 @@ let jankenArr = ['rock', 'paper', 'scissors'];
         // state update
         // re-display components (which ones?)
     // optional: handle functions for shared event handler logic
+
+// find winner, update states and scoreboard, update win/loss/draw picture, update choosing
 function handleThrow(player) {
     let result = score(player, getRandomItem(jankenArr));
-    console.log(result);
+
+    updateResults(result);
+
+    choosing = 0;
+    updateClasses();
+
+    updateStates(result);
+    updateScoreboard();
 }
+
+// elements for changing classes
+let chooseThrow = document.getElementById('choose-throw');
+let resultsSection = document.getElementById('results-section');
+console.log(resultsSection);
+
+// update classes to rehide the correct elements
+function updateClasses() {
+    if (choosing) {
+        chooseThrow.classList = '';
+        resultsSection.classList = 'flex-column hidden';
+    } 
+    else {
+        chooseThrow.classList.add('hidden');
+        resultsSection.classList = '';
+        resultsSection.classList.add('flex-column');
+    }
+}
+
+// starting the game
+let playerStart = document.getElementById('avatar-select');
+let start = document.getElementById('begin');
+
+start.addEventListener('click', () => {
+    chooseThrow.classList = '';
+    playerStart.classList.add('hidden');
+});
+
+// play again button class updater
+let playAgain = document.getElementById('play-again');
+playAgain.addEventListener('click', () => {
+    choosing = 1;
+    updateClasses();
+});
+
+// grab results display picture and change based on result
+let resultsPic = document.getElementById('win-loss-draw');
+let resultsText = document.getElementById('win-loss-text');
+function updateResults(result) {
+    if (result === 1) {
+        resultsPic.src = 'assets/youwin.png';
+        resultsText.textContent = 'You Win!';
+    }
+    else if (result === -1) {
+        resultsPic.src = 'assets/boy-lose.png';
+        resultsText.textContent = 'You Lose';
+    }
+    else {
+        resultsPic.src = 'assets/draw.png';
+        resultsText.textContent = 'Draw Game';
+    }
+}
+
+// update the state values based on result
+function updateStates(result) {
+    if (result === 1) {
+        wins++;
+    }
+    else if (result === 0) {
+        draws++;
+    }
+    else {
+        losses++;
+    }
+    games++;
+}
+
+// update the scoreboard with current state values
+let winsDisplay = document.getElementById('wins');
+let lossesDisplay = document.getElementById('losses');
+let drawsDisplay = document.getElementById('draws');
+let totalGames = document.getElementById('games'); 
+function updateScoreboard() {
+    winsDisplay.textContent = wins;
+    lossesDisplay.textContent = losses;
+    drawsDisplay.textContent = draws;
+    totalGames.textContent = games;
+}
+
 
 // grab all rock paper and scissor buttons and add handleThrow function
 let rpsButtons = document.querySelectorAll('[id=throw-buttons]');
