@@ -17,6 +17,15 @@
 
 
 // updating name input across every section
+let avatarSelect = document.getElementById('choose-avatar');
+let playerAvatar = document.querySelectorAll('[id=player-avatar]');
+
+avatarSelect.addEventListener('change', () => {
+    for (let i of playerAvatar) {
+        i.src = 'assets/' + avatarSelect.value + '.png';
+    }
+});
+
 let nameInput = document.getElementById('nameInput');
 let nameDisplay = document.querySelectorAll('[id=name-display]');
 
