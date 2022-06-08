@@ -38,7 +38,6 @@ function handleThrow(player) {
 // elements for changing classes
 let chooseThrow = document.getElementById('choose-throw');
 let resultsSection = document.getElementById('results-section');
-console.log(resultsSection);
 
 // update classes to rehide the correct elements
 function updateClasses() {
