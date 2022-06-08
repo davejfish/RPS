@@ -21,17 +21,30 @@ img {
     align-self: center;
 }
 
-#avatar-display {
-    width: 90px;
-    margin-left: 20px;;
+span {
+    text-align: center;
 }
 
-#player-avatar {
+button {
+    width: fit-content;
+    align-self: center;
+}
+
+.avatar-display {
+    width: 90px;
+    margin-left: 20px;
+}
+
+.player-avatar {
     width: 80px;
 }
 
-span {
-    text-align: center;
+.results-avatar {
+    width: 60px;
+}
+
+#win-loss-draw {
+    width: 50px;
 }
 
 #begin {
@@ -45,13 +58,32 @@ span {
     width: 400px;
 }
 
+.results-grid {
+    display: grid;
+    grid-template-columns: 40% 20% 40%;
+    height: 150px;
+    width: 400px;
+}
+
+.results-grid-rows {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    height: 150px;
+}
+
 .flex-row {
     display: flex;
     flex-direction: row;
 }
 
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
 .rps-button {
     width: 50px;
+    height: 34px;
 }
 
 .rps-image {
@@ -62,7 +94,15 @@ span {
     width: 120px;
 }
 
+.cpu-results-avatar {
+    width: 50px;
+}
+
 .centered {
     justify-content: center;
     align-items: center;
+}
+
+.result-throws {
+    width: 60px;
 }

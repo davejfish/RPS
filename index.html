@@ -41,7 +41,7 @@
             </div>
 
             <div>
-                <img id="avatar-display" src="assets/gorilla.png">
+                <img id="player-avatar" class="avatar-display" src="assets/gorilla.png">
                 <span id="name-display">name</span>
             </div>
 
@@ -54,7 +54,7 @@
                     <span id="player-name">
                         player name
                     </span>
-                    <img id="player-avatar" src="assets/gorilla.png">
+                    <img id="player-avatar" class="player-avatar" src="assets/gorilla.png">
 
                     <div class="flex-row">
                         <button class="rps-button">
@@ -91,7 +91,38 @@
 
         </section>
 
-        <section id="results">
+        <section id="results" class="flex-column">
+
+            <section class="results-grid">
+                
+                <div class="results-grid-rows">
+                    <div>
+                        <img id="player-thrown" class="result-throws" src="assets/rock.png">
+                    </div>
+                    <div>
+                        <img id="player-avatar" class="results-avatar" src="assets/gorilla.png">
+                    </div>
+                </div>
+
+                <div>
+                    <img id="win-loss-draw" src="assets/youwin.png">
+                    <span id="win-loss-text">
+                        text here
+                    </span>
+                </div>
+
+                <div class="results-grid-rows">
+                    <div>
+                        <image id="cpu-throw" class="result-throws" src="assets/paper.png"></image>
+                    </div>
+                    <div>
+                        <img id="cpu-avatar" class="cpu-results-avatar" src="assets/warumono.png">
+                    </div>
+                </div>
+
+            </section>
+
+            <button id="play-again">play again?</button>
 
         </section>
 
