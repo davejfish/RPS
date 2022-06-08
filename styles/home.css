@@ -84,6 +84,9 @@ button {
 .rps-button {
     width: 50px;
     height: 34px;
+    padding: 0;
+    border: none;
+    background: none;
 }
 
 .rps-image {
