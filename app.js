@@ -1,8 +1,15 @@
 // import needed modules
 // import { score, getRandomItem } from './utils.js';
+
+import { score, getRandomItem } from './utils.js';
+
 // state
-
-
+let wins = 0;
+let losses = 0;
+let draws = 0;
+let games = 0;
+let choosing = 1;
+let jankenArr = ['rock', 'paper', 'scissors'];
 
 // components
     // component
@@ -14,7 +21,18 @@
         // state update
         // re-display components (which ones?)
     // optional: handle functions for shared event handler logic
+function handleThrow(player) {
+    let result = score(player, getRandomItem(jankenArr));
+    console.log(result);
+}
 
+// grab all rock paper and scissor buttons and add handleThrow function
+let rpsButtons = document.querySelectorAll('[id=throw-buttons]');
+for (let i of rpsButtons) {
+    i.addEventListener('click', () => {
+        handleThrow(i.value);
+    });
+}
 
 // updating name input across every section
 let avatarSelect = document.getElementById('choose-avatar');
@@ -26,6 +44,7 @@ avatarSelect.addEventListener('change', () => {
     }
 });
 
+// updating player name in all sections
 let nameInput = document.getElementById('nameInput');
 let nameDisplay = document.querySelectorAll('[id=name-display]');
 

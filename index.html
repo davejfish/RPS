@@ -15,7 +15,7 @@
 <body>
     <header>
         <img src="assets/html_css_js.png">
-        <h1>Web UI Project</h1>
+        <h1>Janken!</h1>
     </header>
 
     <main>
@@ -57,15 +57,15 @@
                     <img id="player-avatar" class="player-avatar" src="assets/gorilla.png">
 
                     <div class="flex-row">
-                        <button class="rps-button">
+                        <button id="throw-buttons" value="rock" class="rps-button">
                             <img class="rps-image" src="assets/rock.png">
                         </button>
 
-                        <button class="rps-button">
+                        <button id="throw-buttons" value="paper" class="rps-button">
                             <img class="rps-image" src="assets/paper.png">
                         </button>
                         
-                        <button class="rps-button">
+                        <button id="throw-buttons" value="scissors" class="rps-button">
                             <img class="rps-image" src="assets/scissors.png">
                         </button>
                         
@@ -124,6 +124,12 @@
 
             <button id="play-again">play again?</button>
 
+        </section>
+
+        <section>
+            <p id="scoreboard">
+                <span id="wins">0</span> wins, <span id="losses">0</span> losses, <span id="draws">0</span> draws in <span id="games">0</span> games.
+            </p>
         </section>
 
     </main>

@@ -89,6 +89,10 @@ button {
     background: none;
 }
 
+.rps-button:hover {
+    background-color: #b5b6e4;
+}
+
 .rps-image {
     width: 25px;
 }
